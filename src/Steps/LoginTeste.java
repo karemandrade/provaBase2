@@ -3,13 +3,15 @@ package Steps;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Timer;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObject.ConfigPage;
 import pageObject.LoginPage;
+import sun.util.resources.cldr.af.TimeZoneNames_af;
 
 public class LoginTeste {
 
@@ -25,7 +27,6 @@ public class LoginTeste {
 	@Test
 	public void logarComSucesso() throws InterruptedException {
 		login.logar("karem.andrade", "12345678");
-		Thread.sleep(1000);
 		assertTrue(login.checkLoginSucesso().equals("karem.andrade"));
 	}
 
